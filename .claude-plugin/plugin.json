@@ -8,5 +8,5 @@
   },
   "repository": "https://github.com/mividtim/claude-code-agency",
   "license": "MIT",
-  "keywords": ["agent", "persistent", "identity", "memory", "boot-sequence"]
+  "keywords": ["agent", "persistent", "identity", "memory", "boot-sequence", "semantic-search", "index", "vault"]
 }

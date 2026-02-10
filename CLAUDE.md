@@ -17,6 +17,16 @@ and continuity between sessions.
   build a mental index without loading everything. Use when you need to find
   something in memory but don't know which file it's in.
 
+- `/agency:index` — **Periodically, to keep the semantic index current.** Scans
+  all markdown files in `memory/`, detects changes via content hashing, and
+  prints files that need indexing. You then summarize each file and update the
+  index with keywords. Pass a subcommand: `scan`, `file`, `update`, `stats`.
+
+- `/agency:search` — **When you need to find something in memory.** Searches
+  the semantic index by keyword overlap with your query. Returns ranked results
+  with scores, summaries, and matched keywords. Supports `search-json` mode
+  for structured output. Also handles miss logging (`miss`, `misses`).
+
 ## Key Principles
 
 ### Memory as Library, Not RAM
