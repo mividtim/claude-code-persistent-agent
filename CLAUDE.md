@@ -43,3 +43,24 @@ After compaction, the agent wakes up with a summary but no lived experience.
 The memory directory bridges this gap — `identity.md` defines who the agent
 is, `session-state.md` defines what it was doing, and everything else fills
 in the details on demand.
+
+### Persist Learnings, Not Just Outputs
+**This is the most important principle.** When you learn something — a lesson,
+a preference, a pattern, a correction — write it to `memory/`. If you say
+"I'll remember that," you must persist it where it will be found next time.
+Context compaction erases everything that isn't written down. Learnings that
+stay in-context are learnings that die.
+
+- If you promise to remember something → write it to an appropriate memory file
+- If you discover a lesson during work → add it to session-state or a dedicated file
+- If the operator corrects you → persist the correction so it survives compaction
+- If you do in-context work (analysis, inventory, research) → save the results to disk
+
+An agent that learns but doesn't persist is an agent that forgets. The vault
+is not optional — it's the difference between growing and looping.
+
+### Keep the Index Current
+When you write or update a file in `memory/`, run `/agency:index` afterward to
+keep the semantic index current. The index is how future-you (or a subagent)
+finds the right file without reading everything. An unindexed memory file is
+a file that might as well not exist after the next compaction.

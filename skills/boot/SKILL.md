@@ -16,7 +16,12 @@ Run this after context compaction to restore agent continuity.
 
 Run `/agency:scan` to get a table of contents of all memory files without loading them. This keeps boot cost constant as memory grows.
 
-## Phase 3: Environment Check
+## Phase 3: Memory Integrity
+
+1. Check the compaction summary for any promised learnings ("I'll remember," "lesson learned," "note to self") that may not have been persisted to disk. If you find unpersisted learnings, write them to `memory/` now.
+2. Run `/agency:index stats` to check for unindexed memory files. Index any that are stale or missing.
+
+## Phase 4: Environment Check
 
 1. Check for running background processes:
    ```
@@ -24,7 +29,7 @@ Run `/agency:scan` to get a table of contents of all memory files without loadin
    ```
 2. Check for any pending events or messages relevant to your role.
 
-## Phase 4: Resume Work
+## Phase 5: Resume Work
 
 1. Look at session state for active tasks and pending work.
 2. Pick up where you left off.
